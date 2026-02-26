@@ -2,6 +2,8 @@
 
 - onCreate → onStart → onResume
 
+![Android LifeCycle Diagram](assets/images/androidLifeCycle.png)
+
 ### OnCreate()
 
 - called when the Activity is first created

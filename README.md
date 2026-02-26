@@ -79,3 +79,43 @@ useEffect(() => {
   return () => controller.abort();
 }, []);
 ```
+
+# Updating
+
+- when the react native componente are receaving
+- props change
+- state change
+
+```javascript
+const Counter = () => {
+  const [count, setCount] = useState(0);
+
+  console.log("renderizou");
+
+  return (
+    <Button title={`Count: ${count}`} onPress={() => setCount(count + 1)} />
+  );
+};
+```
+
+- run only something change
+
+```javascript
+useEffect(() => {
+  console.log("count mudou");
+}, [count]);
+```
+
+- cleanup updating
+
+```javascript
+useEffect(() => {
+  console.log("setup");
+
+  return () => {
+    console.log("cleanup (antes do próximo update)");
+  };
+}, [count]);
+```
+
+- Change `count` -> run cleanup -> new effect

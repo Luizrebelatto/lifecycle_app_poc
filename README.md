@@ -90,7 +90,7 @@ useEffect(() => {
 const Counter = () => {
   const [count, setCount] = useState(0);
 
-  console.log("renderizou");
+  console.log("render");
 
   return (
     <Button title={`Count: ${count}`} onPress={() => setCount(count + 1)} />
@@ -102,7 +102,7 @@ const Counter = () => {
 
 ```javascript
 useEffect(() => {
-  console.log("count mudou");
+  console.log("count changed");
 }, [count]);
 ```
 
@@ -113,7 +113,7 @@ useEffect(() => {
   console.log("setup");
 
   return () => {
-    console.log("cleanup (antes do próximo update)");
+    console.log("cleanup before update");
   };
 }, [count]);
 ```
